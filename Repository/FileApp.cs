@@ -5,7 +5,7 @@ namespace AFilesAppload.Repository
 {
     public class FileApp
     {
-        public static bool PostFile(IFormFile formFile)
+        public static bool PostFile(IFormFile formFile) 
         {
             if (formFile.Length >0)
             {
@@ -18,6 +18,7 @@ namespace AFilesAppload.Repository
                     formFile.CopyTo(stream);
                     apploadFile.Filedata = stream.ToArray();
                 }
+                Console.WriteLine("");
                 TestContext testContext = new TestContext();
                 testContext.ApploadFiles.Add(apploadFile);
                 testContext.SaveChanges();
